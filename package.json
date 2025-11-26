@@ -9,9 +9,16 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "daisyui": "^5.5.5",
+    "date-fns": "^4.1.0",
+    "firebase": "^12.6.0",
+    "marquee": "^0.2.1",
     "next": "16.0.4",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "react-hot-toast": "^2.6.0",
+    "react-icons": "^5.5.0",
+    "sweetalert2": "^11.26.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
