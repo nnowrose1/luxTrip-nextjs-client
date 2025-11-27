@@ -1,6 +1,7 @@
 'use client'
 import { AuthContext } from '@/components/authProvider/AuthContext';
 import React, { use } from 'react';
+import Swal from 'sweetalert2';
 
 const page = () => {
 const {user} = use(AuthContext);
@@ -44,7 +45,15 @@ const {user} = use(AuthContext);
     });
 
     const data = await res.json();
-    console.log(data); 
+     Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Your vehicle has been added!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      e.target.reset();
+    // console.log(data); 
     }
     return (
         <div className=" bg-blue-50">
@@ -157,7 +166,7 @@ const {user} = use(AuthContext);
           <input
             type="text"
             name="image"
-            required
+            
             className="w-full border dark:text-primary border-orange-400 rounded-lg p-2 focus:ring-2 focus:ring-orange-400"
           />
         </div>

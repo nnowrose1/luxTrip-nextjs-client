@@ -8,9 +8,10 @@ const nextConfig = {
       "firebasestorage.googleapis.com",
       "i.ibb.co",
       "ibb.co",
-      "i.ibb.co.com"
+"i.ibb.co.com"
     ],
   },
 };
+
 
 export default nextConfig;
