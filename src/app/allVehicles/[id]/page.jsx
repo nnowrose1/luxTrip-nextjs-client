@@ -12,7 +12,7 @@ import {
 const page = async ({ params }) => {
   const { id } = await params;
 
-  const data = await fetch(`http://localhost:5000/allVehicles/${id}`);
+  const data = await fetch(`https://luxtrip-nextjs.vercel.app/allVehicles/${id}`);
   const vehicle = await data.json();
   console.log(vehicle);
 

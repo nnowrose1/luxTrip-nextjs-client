@@ -11,7 +11,7 @@ const page =  () => {
   useEffect(() => {
     if (!user) return;
 
-    fetch(`http://localhost:5000/myVehicles?email=${user.email}`)
+    fetch(`https://luxtrip-nextjs.vercel.app/myVehicles?email=${user.email}`)
       .then(res => res.json())
       .then(data => setMyVehicles(data));
   }, [user]);
@@ -27,7 +27,7 @@ const page =  () => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await fetch(`http://localhost:5000/allVehicles/${_id}`, {
+        await fetch(`https://luxtrip-nextjs.vercel.app/allVehicles/${_id}`, {
           method: "DELETE",
         });
 

@@ -7,7 +7,7 @@ const page = async() => {
 //   const [vehicles, setVehicles] = useState([]);
 //   const [loading, setLoading] = useState(true);
 
-  const data = await fetch('http://localhost:5000/allVehicles')
+  const data = await fetch('https://luxtrip-nextjs.vercel.app/allVehicles')
   const vehicles = await data.json();
 //   console.log(vehicles);
   

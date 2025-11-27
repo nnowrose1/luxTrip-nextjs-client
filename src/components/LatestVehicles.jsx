@@ -3,7 +3,7 @@ import VehicleCard from './VehicleCard';
 
 const LatestVehicles = async() => {
 
-const data = await fetch('http://localhost:5000/latestVehicles')
+const data = await fetch('https://luxtrip-nextjs.vercel.app/latestVehicles')
   const latestVehicles = await data.json();
     return (
          <section className="pt-12 bg-blue-50">

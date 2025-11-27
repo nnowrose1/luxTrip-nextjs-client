@@ -11,6 +11,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "@/firebase/firebase.config";
+import Cookies from "js-cookie";
 
 const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
@@ -46,8 +47,15 @@ const AuthProvider = ({ children }) => {
     // set/mount the observer
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       // console.log(currentUser);
-      setUser(currentUser);
-      setLoading(false);
+      if (currentUser) {
+        currentUser.getIdToken().then((token) => Cookies.set("token", token));
+        setUser(currentUser);
+        setLoading(false);
+      }
+      else{
+        setUser(null);
+        Cookies.remove("token");
+      }
     });
     // clear the observer
     return () => {
@@ -65,7 +73,7 @@ const AuthProvider = ({ children }) => {
     setUser,
     loading,
   };
-  
+
   return <AuthContext value={authInfo}>{children}</AuthContext>;
 };
 

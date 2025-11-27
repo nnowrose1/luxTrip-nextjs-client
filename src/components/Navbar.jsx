@@ -20,7 +20,6 @@ const Navbar = () => {
       <li className="font-semibold">
         <Link href="/myVehicles">My Vehicles</Link>
       </li>
-      
     </>
   );
 
@@ -82,28 +81,31 @@ const Navbar = () => {
           data-tip={user?.displayName ? user?.displayName : "User"}
         >
           {user && (
-           <div className="dropdown dropdown-start">
-         {/* USER IMAGE BUTTON */}
-          <div tabIndex={0} role="button" className="avatar cursor-pointer">
-            <div className="w-10 h-10 rounded-full ring ring-primary ring-offset-2">
-              <Image
-                src={user?.photoURL}
-                alt="User"
-                width={40}
-                height={40}
-              />
-            </div>
-          </div>
+            <div className="dropdown dropdown-start">
+              {/* USER IMAGE BUTTON */}
+              <div tabIndex={0} role="button" className="avatar cursor-pointer">
+                <div className="w-10 h-10 rounded-full ring ring-primary ring-offset-2">
+                  <Image
+                    src={user?.photoURL}
+                    alt="User"
+                    width={40}
+                    height={40}
+                  />
+                </div>
+              </div>
 
-  <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-    <li className="font-semibold text-accent">
-        <Link href="/addVehicle">Add Vehicle</Link>
-      </li>
-     <li className="font-semibold text-accent">
-        <Link href="/manageVehicles">Manage Vehicles</Link>
-      </li>
-  </ul>
-</div>
+              <ul
+                tabIndex="-1"
+                className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+              >
+                <li className="font-semibold text-accent">
+                  <Link href="/addVehicle">Add Vehicle</Link>
+                </li>
+                <li className="font-semibold  text-accent">
+                  <Link href="/myVehicles">My Vehicles</Link>
+                </li>
+              </ul>
+            </div>
           )}
         </div>
 
