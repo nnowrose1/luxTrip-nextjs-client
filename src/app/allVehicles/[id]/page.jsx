@@ -1,5 +1,6 @@
 import Cookies from "js-cookie";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import React from "react";
 import {
   FaCalendarAlt,
