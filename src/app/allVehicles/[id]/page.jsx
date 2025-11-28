@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import Image from "next/image";
 import React from "react";
 import {
@@ -11,6 +12,11 @@ import {
 
 const page = async ({ params }) => {
   const { id } = await params;
+
+  const token = Cookies().get("token")?.value;
+  if (!token) {
+    redirect("/login");
+  }
 
   const data = await fetch(`https://luxtrip-nextjs.vercel.app/allVehicles/${id}`);
   const vehicle = await data.json();

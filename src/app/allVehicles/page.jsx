@@ -3,13 +3,16 @@ import Loader from "@/components/Loader";
 import VehicleCard from "@/components/VehicleCard";
 import React, { Suspense } from "react";
 
+export const dynamic = "force-dynamic";
+
 const page = async() => {
 //   const [vehicles, setVehicles] = useState([]);
 //   const [loading, setLoading] = useState(true);
 
-  const data = await fetch('https://luxtrip-nextjs.vercel.app/allVehicles')
+  const data = await fetch('https://luxtrip-nextjs.vercel.app/allVehicles',  {
+    cache: "no-store",})
   const vehicles = await data.json();
-//   console.log(vehicles);
+   console.log(vehicles);
   
 //   if (loading) {
 //     return <Loader></Loader>;
