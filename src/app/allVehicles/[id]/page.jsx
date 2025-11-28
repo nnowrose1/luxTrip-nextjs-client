@@ -1,4 +1,5 @@
-import Cookies from "js-cookie";
+
+import { cookies } from "next/headers";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import React from "react";
@@ -14,7 +15,7 @@ import {
 const page = async ({ params }) => {
   const { id } = await params;
 
-  const token = Cookies().get("token")?.value;
+  const token = cookies().get("token")?.value;
   if (!token) {
     redirect("/login");
   }
