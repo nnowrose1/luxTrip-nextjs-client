@@ -1,8 +1,10 @@
+"use client";
+import Cookies from "js-cookie";
 
-import { cookies } from "next/headers";
 import Image from "next/image";
-import { redirect } from "next/navigation";
-import React from "react";
+import { redirect, useRouter } from "next/navigation";
+
+import React, { useEffect } from "react";
 import {
   FaCalendarAlt,
   FaCarSide,
@@ -14,13 +16,19 @@ import {
 
 const page = async ({ params }) => {
   const { id } = await params;
+  const router = useRouter();
 
-  const token = cookies().get("token")?.value;
-  if (!token) {
-    redirect("/login");
-  }
+  useEffect(() => {
+    const token = Cookies.get("token");
 
-  const data = await fetch(`https://luxtrip-nextjs.vercel.app/allVehicles/${id}`);
+    if (!token) {
+      router.push("/login");
+      return;
+    }
+  });
+  const data = await fetch(
+    `https://luxtrip-nextjs.vercel.app/allVehicles/${id}`
+  );
   const vehicle = await data.json();
   console.log(vehicle);
 
