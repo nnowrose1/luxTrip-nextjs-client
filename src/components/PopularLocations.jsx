@@ -12,10 +12,10 @@ const PopularLocations = () => {
 
   return (
     <section className="py-14 px-4">
-      <h2 data-aos="fade-left" className="text-3xl md:text-4xl font-bold text-accent mb-4 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4 text-center">
         Popular <span className="text-orange-400">Locations</span>
       </h2>
-      <p data-aos="fade-right" className="text-center text-accent max-w-2xl mx-auto mb-8">
+      <p className="text-center text-accent max-w-2xl mx-auto mb-8">
         We’re available in major cities and expanding every day.
       </p>
 
