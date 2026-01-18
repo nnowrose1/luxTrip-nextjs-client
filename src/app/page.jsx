@@ -1,6 +1,8 @@
 import Banner from "@/components/Banner";
 import HowItWorks from "@/components/HowItWorks";
 import LatestVehicles from "@/components/LatestVehicles";
+import PopularLocations from "@/components/PopularLocations";
+import Statistics from "@/components/Statistics";
 import Testimonials from "@/components/Testimonials";
 import WhyChooseUs from "@/components/WhyChooseUs";
 // import Marquee from "marquee";
@@ -13,10 +15,14 @@ export default function Home() {
       <Banner></Banner>
 
       <LatestVehicles></LatestVehicles>
+
+      <HowItWorks></HowItWorks>
+
+      <PopularLocations></PopularLocations>
    
       <WhyChooseUs></WhyChooseUs>
 
-       <HowItWorks></HowItWorks>
+       <Statistics></Statistics>
 
           {/* customer testimonial section */}
       <section className="bg-blue-50 py-12 px-4 text-accent text-center">
