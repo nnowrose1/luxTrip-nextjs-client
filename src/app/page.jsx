@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner";
+import HowItWorks from "@/components/HowItWorks";
 import LatestVehicles from "@/components/LatestVehicles";
 import Testimonials from "@/components/Testimonials";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -17,6 +18,8 @@ export default function Home() {
         <h2 className="text-3xl md:text-4xl font-bold text-accent mb-8">
           What Our <span className="text-orange-400">Customers</span> Say
         </h2>
+
+        <HowItWorks></HowItWorks>
 
         <Testimonials></Testimonials>
       </section>
