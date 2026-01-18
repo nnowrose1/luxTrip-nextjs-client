@@ -18,7 +18,7 @@ const Login = () => {
       .then((result) => {
         // console.log(result.user);
         setUser(result.user);
-        router.push("/");
+        router.push("/allVehicles");
         e.target.reset();
       })
       .catch((error) => {

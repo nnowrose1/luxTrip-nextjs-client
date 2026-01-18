@@ -9,7 +9,7 @@ import {
   FaStar,
 } from "react-icons/fa";
 
-const page = async ({ params }) => {
+const page = async({ params }) => {
   const { id } = await params;
 
   const data = await fetch(
